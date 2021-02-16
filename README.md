@@ -1,7 +1,5 @@
 # Teste Ewally
-
-
 ## Instruções
 
-flutter pub get
-flutter pub run build_runner build --delete-conflicting-outputs
+1. flutter pub get
+2. flutter pub run build_runner build --delete-conflicting-outputs
