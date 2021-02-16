@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:teste_ewally/shared/models/b2b/statement_model.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 
 part 'base_statement_model.g.dart';
 

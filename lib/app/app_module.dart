@@ -11,7 +11,9 @@ import 'package:teste_ewally/shared/repositories/contracts/auth_repository_contr
 import 'package:teste_ewally/shared/repositories/contracts/b2b_repository_contract.dart';
 
 class AppModule extends StatelessWidget {
-  const AppModule({Key key}) : super(key: key);
+  final bool isAuthenticated;
+
+  const AppModule({Key key, this.isAuthenticated}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +30,11 @@ class AppModule extends StatelessWidget {
                   AccountRepository(dio),
         ),
         ProxyProvider<Dio, B2bRepositoryContract>(
-          update: (_, Dio dio, B2bRepositoryContract authRepositoryContract) =>
+          update: (_, Dio dio, B2bRepositoryContract b2bRepositoryContract) =>
               B2bRepository(dio),
         ),
       ],
-      child: AppWidget(),
+      child: AppWidget(isAuthenticated: isAuthenticated),
     );
   }
 }

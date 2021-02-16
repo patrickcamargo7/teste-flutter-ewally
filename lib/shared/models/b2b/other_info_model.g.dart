@@ -8,13 +8,15 @@ part of 'other_info_model.dart';
 
 OtherInfoModel _$OtherInfoModelFromJson(Map<String, dynamic> json) {
   return OtherInfoModel(
-    senderAccount: json['senderAccount'] as String,
-    description: json['description'] as String,
+    otherAccountName: json['otherAccountName'] as String,
+    userLatitude: (json['userLatitude'] as num)?.toDouble(),
+    userLongitude: (json['userLongitude'] as num)?.toDouble(),
   );
 }
 
 Map<String, dynamic> _$OtherInfoModelToJson(OtherInfoModel instance) =>
     <String, dynamic>{
-      'senderAccount': instance.senderAccount,
-      'description': instance.description,
+      'otherAccountName': instance.otherAccountName,
+      'userLatitude': instance.userLatitude,
+      'userLongitude': instance.userLongitude,
     };

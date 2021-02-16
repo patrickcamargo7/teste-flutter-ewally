@@ -8,3 +8,9 @@ abstract class AuthScreenState extends Equatable {
 }
 
 class AuthScreenInitial extends AuthScreenState {}
+
+class AuthScreenLoadingState extends AuthScreenState {}
+
+class AuthScreenSuccessState extends AuthScreenState {}
+
+class AuthScreenErrorState extends AuthScreenState {}

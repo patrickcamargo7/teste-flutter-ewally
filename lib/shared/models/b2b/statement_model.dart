@@ -6,31 +6,39 @@ part 'statement_model.g.dart';
 
 @JsonSerializable()
 class StatementModel {
-	@JsonKey(name: 'id')
-	String id;
-	@JsonKey(name: 'amount')
+  @JsonKey(name: 'id')
+  int id;
+  @JsonKey(name: 'accountName')
+  String accountName;
+  @JsonKey(name: 'amount')
   double amount;
-	@JsonKey(name: 'balance')
-	double balance;
-	@JsonKey(name: 'createdAt')
-	String createdAt;
-	@JsonKey(name: 'operationType')
-	String operationType;
-	@JsonKey(name: 'otherInfo')
-	OtherInfoModel otherInfo;
+  @JsonKey(name: 'balance')
+  double balance;
+  @JsonKey(name: 'createdAt')
+  String createdAt;
+  @JsonKey(name: 'operationType')
+  String operationType;
+  @JsonKey(name: 'status')
+  String status;
+  @JsonKey(name: 'otherInfo')
+  OtherInfoModel otherInfo;
 
-	StatementModel({
-		this.id,
-		this.amount,
-		this.balance,
-		this.createdAt,
-		this.operationType,
-		this.otherInfo,
-	});
+  StatementModel({
+    this.id,
+    this.accountName,
+    this.amount,
+    this.balance,
+    this.createdAt,
+    this.operationType,
+    this.status,
+    this.otherInfo,
+  });
 
-	factory StatementModel.fromJson(Map<String, dynamic> json) {
-		return _$StatementModelFromJson(json);
-	}
+  factory StatementModel.fromJson(Map<String, dynamic> json) {
+    return _$StatementModelFromJson(json);
+  }
 
-	Map<String, dynamic> toJson() => _$StatementModelToJson(this);
+  Map<String, dynamic> toJson() => _$StatementModelToJson(this);
+
+  get createdAtDate => createdAt.split("T")[0];
 }
